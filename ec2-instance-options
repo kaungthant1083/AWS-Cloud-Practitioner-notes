@@ -1,0 +1,39 @@
+AWS EC2 Instance Purchasing Option
+Amazon provides different ways to pay for the EC2 instances
+On-Demand Instances
+Reserved Instances
+Spot Instances
+Light, Medium, and Heavy Utilization Reserved Instances are no longer available for purchase and were part of the Previous Generation AWS EC2 purchasing model
+AWS also allows you to launch EC2 instance on shared or dedicated tenancy
+EC2 Dedicated Instances
+Dedicated Instances are EC2 instances that run in a VPC on hardware that’s dedicated to a single customer
+Dedicated Instances are physically isolated at the host hardware level from the instances that aren’t Dedicated Instances and from instances that belong to other AWS accounts.
+Each VPC has a related instance tenancy attribute, and can’t be changed after the VPC has been created. Default is shared
+Each instance launched into a VPC has a tenancy attribute, can’t be changed after the instance is launched. Default tenancy depends on the VPC tenancy.
+Dedicated Instances can be launched using
+Create the VPC with the instance tenancy set to dedicated, all instances launched into this VPC are Dedicated Instances even though if you mark the tenancy as shared
+Create the VPC with the instance tenancy set to default, and specify dedicated tenancy for any instances that should be Dedicated Instances when you launch them.
+On-Demand Instances
+Pay for the instances and the compute capacity that you use by the hour, with no long-term commitments or up-front payments
+Instances can be scaled accordingly as per the demand
+Although AWS makes effort to have the capacity to launch On-Demand instances, there might be instances during peak demand where the instance cannot be launched
+Well suited for
+Users that want the low cost and flexibility of Amazon EC2 without any up-front payment or long-term commitment
+Applications with short term, spiky, or unpredictable workloads that cannot be interrupted
+Applications being developed or tested on Amazon EC2 for the first time
+Reserved Instances
+Reserved Instances provides lower hourly running costs by providing a billing discount as well as capacity reservation that is applied to instances and there would never be a case of insufficient capacity from AWS
+Discounted usage price is fixed for as long as you own the Reserved Instance, allowing compute costs prediction over the term of the reservation.
+Reserved instances are best suited if consistent, heavy, use is expected and they can provide savings over owning your own hardware or running only On-Demand instances.
+Well Suited for
+Applications with steady state or predictable usage
+Applications that require reserved capacity
+Users able to make upfront payments to reduce their total computing costs even further
+
+Reserved instance is not a physical instance that is launched, but its just an accounting term applied to the instance usage during billing
+Reserved Instances do not renew automatically, and the EC2 instances can be continued to be used but charged On-Demand rates
+Auto Scaling or other AWS services can be used to launch the On-Demand instances that use the Reserved Instance benefits
+With Reserved Instances
+You pay for the entire term, regardless of the usage
+Once purchased, the reservation cannot be cancelled but can be sold in the Reserved Instance Marketplace
+Reserved Instance pricing tier discounts only apply to purchases made from AWS, and not to the third party Reserved instances
